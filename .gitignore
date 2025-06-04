@@ -1,0 +1,34 @@
+# Файлы и папки виртуального окружения:
+.venv/
+
+# Кэш python:
+__pycache__
+*.py[cod]
+
+# Файлы IDE:
+.idea
+
+# Логи:
+*.log
+
+# Временные файлы:
+*.tmp
+*.temp
+
+# Артефакты сборки:
+build/
+dist/
+*.egg-info/
+
+# Файлы с секретами:
+.env
+
+# Временные файлы Windows:
+Thumbs.db
+
+# Зависимости:
+poetry.lock
+pyproject.toml
+
+# Другое:
+.replit

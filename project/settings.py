@@ -1,19 +1,18 @@
 import os
 
+import dj_database_url
+from dotenv import load_dotenv
+
+
+load_dotenv()
+SECRET_KEY = os.environ['SECRET_KEY']
+DB_URL = os.environ['DB_URL']
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '',
-        'PORT': '',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-    }
+    'default': dj_database_url.config(default=DB_URL)
 }
 
 INSTALLED_APPS = ['datacenter']
-
-SECRET_KEY = 'REPLACE_ME'
 
 DEBUG = True
 
