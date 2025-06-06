@@ -25,6 +25,9 @@ Then use `pip` (or `pip3`, there is a conflict with Python 2) to install depende
 In the file `.env.example` you can see the environment variables, they are used in the module `settings.py `
 to configure and access the database. If you have access and the necessary data, you can rename
 the `.env.example` file to `.env` and fill in the environment variables. `SECRET_KEY` is the secret key of the website.
+`DEBUG` is a Boolean (logical) setting in the configuration file `settings.py `,
+is responsible for the project's mode of operation:
+debugging or working. If you need to see a detailed error message, enter `True`.
 `DB_URL` is a link with sensitive database data, which includes: user, password, host, port, name. 
 `DB_URL` functions using the [dj-database-url](https://github.com/jazzband/dj-database-url/tree/master) 
 library. The template for this environment variable looks like this: 
@@ -50,18 +53,19 @@ DATABASES = {
 ### Running the script
 
 ```shell
-> python passcards.py
+> python manage.py runserver 127.0.0.1:8000
 ```
 
 Output example:
 ```shell
-employee_name: Jennifer Martin
-passcode: ceb148a6-fb27-4106-890c-89dc8cedfe83
-created_at: 2018-01-11 12:28:39+00:00
-is_active: True
+Watching for file changes with StatReloader
+Performing system checks...
 
-Всего пропусков 100
-Активных пропусков 89
+System check identified no issues (0 silenced).
+June 06, 2025 - 14:02:42
+Django version 3.2.25, using settings 'project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
 ```
 
 ### Project Goals
@@ -95,6 +99,9 @@ Python3 должен быть уже установлен.
 В файле `.env.example` можно ознакомиться с переменными окружения, они используются в модуле `settings.py`
 для настройки и получения доступа к базе данных. Если у вас есть доступ и необходимые данные, можете переименовать
 файл `.env.example` в `.env` и заполнить переменные окружения. `SECRET_KEY` - секретный ключ сайта.
+`DEBUG` — это булевская (логическая) настройка в файле конфигурации `settings.py`, отвечает за режим работы проекта:
+отладочный или рабочий. Если вам необходимо увидеть развернутое сообщение о случившейся
+ошибке пропишите `True`.
 `DB_URL` - ссылка с чувствительными данными базы данных, к данным относится: user, password, host, port, name. 
 Функционирует при помощи библиотеки [dj-database-url](https://github.com/jazzband/dj-database-url/tree/master). 
 Шаблон для данной переменной окружения выглядит следующим образом: 
@@ -120,18 +127,19 @@ DATABASES = {
 ### Запуск скрипта
 
 ```shell
-> python passcards.py
+> python manage.py runserver 127.0.0.1:8000
 ```
 
 Пример вывода:
 ```shell
-employee_name: Jennifer Martin
-passcode: ceb148a6-fb27-4106-890c-89dc8cedfe83
-created_at: 2018-01-11 12:28:39+00:00
-is_active: True
+Watching for file changes with StatReloader
+Performing system checks...
 
-Всего пропусков 100
-Активных пропусков 89
+System check identified no issues (0 silenced).
+June 06, 2025 - 14:02:42
+Django version 3.2.25, using settings 'project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
 ```
 
 ### Цель проекта

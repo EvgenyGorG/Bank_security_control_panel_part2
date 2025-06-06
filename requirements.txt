@@ -1,6 +1,7 @@
 django==3.2.*
 psycopg2-binary==2.9.*
-python-dotenv==1.1.0
 legacy-cgi==2.6.3
-typing_extensions==4.0.1
+typing_extensions==4.14.0
 dj-database-url==2.3.0
+environs~=14.2.0
+python-dotenv==1.1.0
