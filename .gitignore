@@ -26,9 +26,5 @@ dist/
 # Временные файлы Windows:
 Thumbs.db
 
-# Зависимости:
-poetry.lock
-pyproject.toml
-
 # Другое:
 .replit

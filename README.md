@@ -28,6 +28,8 @@ the `.env.example` file to `.env` and fill in the environment variables. `SECRET
 `DEBUG` is a Boolean (logical) setting in the configuration file `settings.py `,
 is responsible for the project's mode of operation:
 debugging or working. If you need to see a detailed error message, enter `True`.
+`DJANGO_ALLOWED_HOSTS` - a list of domain names and IP addresses from which incoming HTTP requests
+to your Django application are allowed.
 `DB_URL` is a link with sensitive database data, which includes: user, password, host, port, name. 
 `DB_URL` functions using the [dj-database-url](https://github.com/jazzband/dj-database-url/tree/master) 
 library. The template for this environment variable looks like this: 
@@ -99,9 +101,11 @@ Python3 должен быть уже установлен.
 В файле `.env.example` можно ознакомиться с переменными окружения, они используются в модуле `settings.py`
 для настройки и получения доступа к базе данных. Если у вас есть доступ и необходимые данные, можете переименовать
 файл `.env.example` в `.env` и заполнить переменные окружения. `SECRET_KEY` - секретный ключ сайта.
-`DEBUG` — это булевская (логическая) настройка в файле конфигурации `settings.py`, отвечает за режим работы проекта:
+`DEBUG` - это булевская (логическая) настройка в файле конфигурации `settings.py`, отвечает за режим работы проекта:
 отладочный или рабочий. Если вам необходимо увидеть развернутое сообщение о случившейся
 ошибке пропишите `True`.
+`DJANGO_ALLOWED_HOSTS` - список доменных имён и IP-адресов, с которых разрешены входящие HTTP-запросы
+к вашему Django-приложению.
 `DB_URL` - ссылка с чувствительными данными базы данных, к данным относится: user, password, host, port, name. 
 Функционирует при помощи библиотеки [dj-database-url](https://github.com/jazzband/dj-database-url/tree/master). 
 Шаблон для данной переменной окружения выглядит следующим образом: 

@@ -1,18 +1,19 @@
 from datacenter.models import Visit
-from datacenter.models import get_duration, format_duration
 from django.shortcuts import render
 from django.utils import timezone
+from visits_analysis import get_duration, format_duration
+
 
 
 def storage_information_view(request):
     non_closed_visits = []
-    people_in_the_vault = Visit.objects.filter(leaved_at=None)
+    incomplete_visits = Visit.objects.filter(leaved_at=None)
 
-    for human_in_the_vault in people_in_the_vault:
-        entry_time = timezone.localtime(human_in_the_vault.entered_at)
-        employee_passcard = human_in_the_vault.passcard
+    for incomplete_visit in incomplete_visits:
+        entry_time = timezone.localtime(incomplete_visit.entered_at)
+        employee_passcard = incomplete_visit.passcard
         employee_name = employee_passcard.owner_name
-        duration = format_duration(get_duration(human_in_the_vault))
+        duration = format_duration(get_duration(incomplete_visit))
 
         non_closed_visit = {
             'who_entered': employee_name,

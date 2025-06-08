@@ -7,6 +7,8 @@ from environs import env
 env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 DB_URL = env('DB_URL')
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS')
+DEBUG = env.bool('DEBAG', default=False)
 
 DATABASES = {
     'default': dj_database_url.config(default=DB_URL)
@@ -14,12 +16,7 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-DEBUG = env.bool('DEBAG', default=False)
-
 ROOT_URLCONF = 'project.urls'
-
-ALLOWED_HOSTS = ['*']
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
