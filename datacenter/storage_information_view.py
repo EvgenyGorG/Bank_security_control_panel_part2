@@ -1,7 +1,7 @@
 from datacenter.models import Visit
 from django.shortcuts import render
 from django.utils import timezone
-from project.visits_analysis import get_duration, format_duration
+from datacenter.visits_analysis import get_duration, format_duration
 
 
 
